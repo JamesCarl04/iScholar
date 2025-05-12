@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SDCA Helpdesk</title>
+  <link rel="stylesheet" href="help-desk.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <span class="navbar-brand">SDCA Helpdesk</span>
+      <div class="navbar-links">
+        <a href="home.html">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="logo">
+      <img src="sdca-logo.png" alt="SDCA Helpdesk Logo" />
+    </div>
+    <div class="form-box">
+      <h2>WE'RE GLAD TO ASSIST YOU!</h2>
+      <p>Please complete the information on the following field and let us know how we may help you. We'll do our best to be as responsive as possible</p>
+
+      <div class="steps">
+        <div class="step active">
+          <div class="circle">👤</div>
+          <span>About</span>
+        </div>
+        <div class="step">
+          <div class="circle">📄</div>
+          <span>Subject</span>
+        </div>
+        <div class="step">
+          <div class="circle">✉️</div>
+          <span>Inquiry</span>
+        </div>
+      </div>
+
+      <form>
+        <label>Name (required)</label>
+        <input type="text" placeholder="Juan Cruz..." required>
+
+        <label>Email (required)</label>
+        <input type="email" placeholder="JuanCruz@email.com" required>
+
+        <label>Contact Number (required)</label>
+        <input type="tel" required>
+
+        <label>Is the inquiry about your enrolled child? (required)</label>
+        <div class="radio-group">
+          <label><input type="radio" name="child" required> Yes</label>
+          <label><input type="radio" name="child"> No</label>
+        </div>
+
+        <label>Education Level</label>
+        <select>
+          <option>Select Student Education Level</option>
+          <option>Preschool</option>
+          <option>Elementary</option>
+          <option>High School</option>
+          <option>College</option>
+        </select>
+
+        <label>Student Number / Reference Number (required)</label>
+        <input type="text" required>
+
+        <button type="submit">Next</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
