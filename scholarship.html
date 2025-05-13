@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scholarships</title>
+  <link rel="stylesheet" href="scholarship.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="left">SDCAPortal</div>
+    <div class="right">
+      <a href="#">Payment Instructions</a>
+      <a href="#">Pay Now</a>
+      <a href="#">Features ▼</a>
+      <a href="#">Evaluation ▼</a>
+      <a href="#">Profile Settings</a>
+      <a href="#">Logout</a>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <aside class="sidebar">
+      <div class="profile">
+        <div class="avatar"></div>
+        <h3>Mac Laurenz Cultura</h3>
+        <span class="student-id">Student ID: 202300995</span>
+      </div>
+      <nav>
+        <a href="#">Profile</a>
+        <a href="#">Grades</a>
+        <a href="#">Balance</a>
+        <a href="#">E - Permit</a>
+        <a href="#">Schedule</a>
+        <a href="#">Awards</a>
+        <a href="#">Clearance</a>
+        <a href="scholarship.html" class="active">Scholarship</a>
+      </nav>
+    </aside>
+
+    <section class="content">
+      <h2>Available Scholarships</h2>
+<ul class="scholarship-list">
+  <li>
+  <div class="item collapsible-header">
+    <div class="info">
+      <strong>Gregdom Scholarship</strong><br/>
+      Entrance Scholarship. Board and Non-board Program.
+    </div>
+    <a href="#" class="view-btn">View</a>
+  </div>
+  <div class="collapsible-content">
+    <h4>Academic Year</h4>
+    <p>2024–2025</p>
+    <h4>Document Requirements</h4>
+    <ul>
+      <li>Scholarship application form</li>
+      <li>Letter addressed to: Dr. Gregorio A. Andamann, Jr., MHA</li>
+      <li>Photocopy of Form 9</li>
+      <li>Certification of Ranking</li>
+      <li>Photocopy certificate of good moral character</li>
+      <li>Latest passport size picture</li>
+    </ul>
+    <button class="apply-btn">Apply</button>
+  </div>
+</li>
+
+  <li>
+    <div class="item">
+      <div class="info">
+        <strong>Faculty/Staff Educational Benefits</strong><br/>
+        Legitimate Spouse and maximum of two children/son Dependency/Niece/Nephew
+      </div>
+      <a href="#" class="view-btn">View</a>
+    </div>
+  </li>
+  <li>
+    <div class="item">
+      <div class="info">
+        <strong>Campus Leaders/Journalists Benefits</strong>
+      </div>
+      <a href="#" class="view-btn">View</a>
+    </div>
+  </li>
+  <li>
+    <div class="item">
+      <div class="info">
+        <strong>Pandemic Assistance Discounts</strong>
+      </div>
+      <a href="#" class="view-btn">View</a>
+    </div>
+  </li>
+  <li>
+    <div class="item">
+      <div class="info">
+        <strong>Academic Honors</strong>
+      </div>
+      <a href="#" class="view-btn">View</a>
+    </div>
+  </li>
+  <li>
+    <div class="item">
+      <div class="info">
+        <strong>Grants-In-Aide for Families</strong>
+      </div>
+      <a href="#" class="view-btn">View</a>
+    </div>
+  </li>
+  <li>
+    <div class="item">
+      <div class="info">
+        <strong>Student Athletes’ Benefits</strong>
+      </div>
+      <a href="#" class="view-btn">View</a>
+    </div>
+  </li>
+  <li>
+    <div class="item">
+      <div class="info">
+        <strong>Guro Mo, Sagot Ko</strong>
+      </div>
+      <a href="#" class="view-btn">View</a>
+    </div>
+  </li>
+</ul>
+    </section>
+  </main>
+<script>
+  document.querySelectorAll('.collapsible-header .view-btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const content = this.closest('li').querySelector('.collapsible-content');
+      content.classList.toggle('show');
+      this.textContent = content.classList.contains('show') ? 'Hide' : 'View';
+    });
+  });
+</script>
+
+
+</body>
+</html>
