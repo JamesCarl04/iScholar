@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="flowchart.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <span class="school-name">COLLEGE OF TAGAYTAY - SENIOR HIGH SCHOOL</span>
+    <div class="user-info">
+      <span>Juan</span>
+      <img src="https://via.placeholder.com/32" alt="User" class="user-img"/>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="https://via.placeholder.com/100" alt="Profile" />
+        <h3>Juan Dela Cruz</h3>
+        <span class="status">Unverified Account</span>
+      </div>
+      <nav>
+        <ul>
+          <li class="active">Dashboard</li>
+          <li>Apply Scholarship</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <h2>Dashboard</h2>
+      <div class="breadcrumbs">Dashboard / Overview</div>
+
+      <div class="charts">
+        <div class="chart-box">
+          <h4>Barangay of Tagaytay Applicants</h4>
+          <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart-box">
+          <h4>Tally of 8th District Applicants</h4>
+          <canvas id="doughnutChart"></canvas>
+        </div>
+      </div>
+
+      <div class="flowchart-box">
+        <h4>Application Flowchart</h4>
+        <img src="flowchart.png" alt="Flowchart" />
+      </div>
+
+      <div class="accounts-box">
+        <h4>Accounts</h4>
+        <div class="table-controls">
+          <label>Show 
+            <select>
+              <option>10</option>
+              <option>25</option>
+              <option>50</option>
+            </select> entries
+          </label>
+          <input type="text" placeholder="Search..." />
+        </div>
+        <table class="accounts-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Picture</th>
+              <th>Lastname</th>
+              <th>Firstname</th>
+              <th>Middlename</th>
+              <th>Municipality</th>
+              <th>Barangay</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SHSREG-001</td>
+              <td><img src="https://via.placeholder.com/32" class="avatar" /></td>
+              <td>Tolentino</td>
+              <td>Kristine Loi</td>
+              <td>Ricare</td>
+              <td>Mendez</td>
+              <td>Poblacion V</td>
+              <td><button class="approve-btn">Approve</button></td>
+            </tr>
+            <tr>
+              <td>SHSREG-0010</td>
+              <td><img src="https://via.placeholder.com/32?text=DC" class="avatar" /></td>
+              <td>Dela Cruz</td>
+              <td>Gary</td>
+              <td></td>
+              <td>Tagaytay</td>
+              <td>Asisan</td>
+              <td><button class="approve-btn">Approve</button></td>
+            </tr>
+            <tr>
+              <td>SHSREG-008</td>
+              <td><img src="https://via.placeholder.com/32?text=V" class="avatar" /></td>
+              <td>Velasco</td>
+              <td>Aila Marie</td>
+              <td>Encarnacion</td>
+              <td>Mendez</td>
+              <td>Asis III</td>
+              <td><button class="approve-btn">Approve</button></td>
+            </tr>
+            <tr>
+              <td>SHSREG-009</td>
+              <td><img src="https://via.placeholder.com/32?text=E" class="avatar" /></td>
+              <td>Encarnacion</td>
+              <td>Aila Mae</td>
+              <td>Magbuhos</td>
+              <td>Tagaytay</td>
+              <td>Tolentino East</td>
+              <td><button class="approve-btn">Approve</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          Showing 1 to 4 of 4 entries
+          <div class="page-buttons">
+            <button disabled>Previous</button>
+            <button class="active">1</button>
+            <button disabled>Next</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Bar Chart
+    new Chart(document.getElementById("barChart"), {
+      type: "bar",
+      data: {
+        labels: ["Asisan", "Francisco", "Tolentino East"],
+        datasets: [{
+          label: "Applicants",
+          data: [10, 10, 9.5],
+          backgroundColor: ["#3498db", "#9b59b6", "#1abc9c"]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+
+    // Doughnut Chart
+    new Chart(document.getElementById("doughnutChart"), {
+      type: "doughnut",
+      data: {
+        labels: ["Mendez", "Tagaytay"],
+        datasets: [{
+          data: [50, 50],
+          backgroundColor: ["#ffe0e6", "#ffeacc"]
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+  </script>
+</body>
+</html>
