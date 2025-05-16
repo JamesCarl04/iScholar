@@ -183,12 +183,14 @@ label {
 }
 
 /* Navigation Controls */
+/* Make sure this CSS matches your form-navigation class */
 .form-navigation {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
   width: 100%;
 }
+
 
 /* Add margin to the right button to push it to the right */
 .form-navigation .next-button,
