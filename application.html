@@ -7,107 +7,346 @@
   <link rel="stylesheet" href="application.css" />
 </head>
 <body>
-  <div class="page-wrapper">
-    <div class="sidebar">
-      <h2>SHS</h2>
-      <ul class="menu">
-        <li><a href="#">🏠 Home</a></li>
-        <li><a href="#">📄 Application</a></li>
-        <li><a href="#">📁 Files</a></li>
-        <li><a href="#">⚙️ Settings</a></li>
-      </ul>
+  <div class="container">
+    <div class="view-controls">
+      <button class="control-button all-button active" id="show-all-btn">All</button>
+      <button class="control-button" id="show-steps-btn">Step by Step</button>
+    </div>
+    
+    <div class="stepper" id="stepper">
+      <div class="step active" data-step="1">
+        <div class="step-icon">👤</div>
+        <div>Personal Information</div>
+      </div>
+      <div class="step" data-step="2">
+        <div class="step-icon">📍</div>
+        <div>Residency</div>
+      </div>
+      <div class="step" data-step="3">
+        <div class="step-icon">👨‍👩‍👧</div>
+        <div>Family Background</div>
+      </div>
+      <div class="step" data-step="4">
+        <div class="step-icon">📁</div>
+        <div>File Upload</div>
+      </div>
+      <div class="step" data-step="5">
+        <div class="step-icon">📅</div>
+        <div>Appointment</div>
+      </div>
+      <div class="step" data-step="6">
+        <div class="step-icon">✅</div>
+        <div>Finish</div>
+      </div>
     </div>
 
-    <div class="main-content">
-      <div class="navbar">
-        <div class="logo">SHS Scholarship</div>
-        <div class="user">Souper Latina</div>
-      </div>
+    <!-- Step 1 -->
+    <div class="form-section" id="step-1">
+      <h2>Personal Information</h2>
+      <hr class="section-divider" />
+      <form class="form-grid">
+        <div><label>Lastname <span class="required">*</span></label><input type="text" required /></div>
+        <div><label>Firstname <span class="required">*</span></label><input type="text" required /></div>
+        <div><label>Middlename</label><input type="text" /></div>
+        <div>
+          <label>Sex <span class="required">*</span></label>
+          <select required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label>Civil Status <span class="required">*</span></label>
+          <select required>
+            <option value="">Select</option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="divorced">Divorced</option>
+            <option value="widowed">Widowed</option>
+          </select>
+        </div>
+        <div><label>Birthdate <span class="required">*</span></label><input type="date" required /></div>
+        <div>
+          <label>Track <span class="required">*</span></label>
+          <select required>
+            <option value="">Choose Track</option>
+            <option value="academic">Academic</option>
+            <option value="technical">Technical-Vocational-Livelihood</option>
+            <option value="arts">Arts and Design</option>
+            <option value="sports">Sports</option>
+          </select>
+        </div>
+        <div>
+          <label>Strand <span class="required">*</span></label>
+          <select required>
+            <option value="">Choose Strand</option>
+            <option value="stem">STEM</option>
+            <option value="humss">HUMSS</option>
+            <option value="abm">ABM</option>
+            <option value="gas">GAS</option>
+          </select>
+        </div>
+        <div class="full-width"><label>Secondary School <span class="required">*</span></label><input type="text" required /></div>
+        <div><label>Skills <span class="optional">(optional)</span></label><input type="text" /></div>
+        <div><label>Talent <span class="optional">(optional)</span></label><input type="text" /></div>
+        <div class="full-width right-align"><button type="button" class="next-button" data-next="2">Next</button></div>
+      </form>
+    </div>
 
-      <div class="container">
-        <div class="stepper">
-          <div class="step active">
-            <div class="step-icon">👤</div>
-            <div>Personal Information</div>
-          </div>
-          <div class="step">
-            <div class="step-icon">📍</div>
-            <div>Residency</div>
-          </div>
-          <div class="step">
-            <div class="step-icon">👨‍👩‍👧</div>
-            <div>Family Background</div>
-          </div>
-          <div class="step">
-            <div class="step-icon">📁</div>
-            <div>File Upload</div>
-          </div>
-          <div class="step">
-            <div class="step-icon">📅</div>
-            <div>Appointment</div>
-          </div>
-          <div class="step">
-            <div class="step-icon">✅</div>
-            <div>Finish</div>
+    <!-- Step 2 -->
+    <div class="form-section hidden" id="step-2">
+      <h2>Residency</h2>
+      <hr class="section-divider" />
+      <form class="form-grid">
+        <div class="full-width">
+          <label>Permanent Address: <span class="required">*</span></label>
+          <input type="text" placeholder="Enter your permanent address" required />
+        </div>
+        <div class="full-width">
+          <label>No. of Months/Years of Residency: <span class="required">*</span></label>
+          <input type="text" placeholder="Enter residency duration" required />
+        </div>
+        <div class="full-width">
+          <label>Are you and your parents a Tagaytay City Registered Voter/s? <span class="required">*</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="voter" value="yes" required /> YES</label>
+            <label><input type="radio" name="voter" value="no" /> NO</label>
+            <label><input type="radio" name="voter" value="guardian" /> GUARDIAN</label>
           </div>
         </div>
+        <div class="full-width">
+          <label>If YES, how long?</label>
+          <div class="form-inline">
+            <label>Father:</label>
+            <input type="text" />
+            <label>Mother:</label>
+            <input type="text" />
+            <label>Applicant:</label>
+            <input type="text" />
+            <label>Guardian:</label>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="full-width">
+          <label>Please Indicate the NAME of guardian: <span class="required">*</span></label>
+          <input type="text" placeholder="Name of guardian" required />
+        </div>
+        <div class="full-width">
+          <label>RELATIONSHIP to the guardian: <span class="required">*</span></label>
+          <input type="text" placeholder="Relationship to the guardian" required />
+        </div>
+        <div class="full-width">
+          <label>ADDRESS of your guardian: <span class="required">*</span></label>
+          <input type="text" placeholder="Address of your guardian" required />
+        </div>
+        <div class="full-width">
+          <label>CONTACT NUMBER of your guardian: <span class="required">*</span></label>
+          <input type="text" placeholder="Contact Number" required />
+        </div>
+        <div class="form-navigation">
+          <button class="prev-button" data-prev="1">Back</button>
+          <button class="next-button" data-next="3">Next</button>
+        </div>
+      </form>
+    </div>
 
-        <h2>Personal Information</h2>
-        <form class="form-grid">
-          <div>
-            <label>Lastname</label>
-            <input type="text" placeholder="Enter your last name" />
-          </div>
-          <div>
-            <label>Firstname</label>
-            <input type="text" placeholder="Enter your first name" />
-          </div>
-          <div>
-            <label>Middlename</label>
-            <input type="text" placeholder="Enter your middle name" />
-          </div>
-          <div>
-            <label>Sex</label>
-            <input type="text" placeholder="Male/Female" />
-          </div>
-          <div>
-            <label>Civil Status</label>
-            <input type="text" placeholder="Single/Married" />
-          </div>
-          <div>
-            <label>Birthdate</label>
-            <input type="date" />
-          </div>
-          <div>
-            <label>Track</label>
-            <select>
-              <option>Choose Track</option>
-            </select>
-          </div>
-          <div>
-            <label>Strand</label>
-            <select>
-              <option>Choose Strand</option>
-            </select>
-          </div>
-          <div class="full-width">
-            <label>Secondary School</label>
-            <input type="text" placeholder="Enter your last school you graduated" />
-          </div>
-          <div>
-            <label>Skills <span class="optional">(optional)</span></label>
-            <input type="text" placeholder="Enter your skills" />
-          </div>
-          <div>
-            <label>Talent <span class="optional">(optional)</span></label>
-            <input type="text" placeholder="Enter your talents" />
-          </div>
-          <div class="full-width right-align">
-            <button type="button" class="next-button">Next</button>
-          </div>
-        </form>
+    <!-- Step 3 -->
+    <div class="form-section hidden" id="step-3">
+      <h2>Family Background</h2>
+      <hr class="section-divider" />
+      <form class="form-grid two-column">
+        <!-- Father Section -->
+        <div class="column">
+          <h3>FATHER</h3>
+          <label>Name: <span class="required">*</span></label>
+          <input type="text" placeholder="Name" required />
+
+          <label>Home Address: <span class="required">*</span></label>
+          <input type="text" placeholder="Home Address" required />
+
+          <label>Contact No.: <span class="required">*</span></label>
+          <input type="text" placeholder="Contact Number" required />
+
+          <label>Present Occupation: <span class="required">*</span></label>
+          <input type="text" placeholder="Occupation" required />
+
+          <label>Office Address: <span class="optional">(optional)</span></label>
+          <input type="text" placeholder="-optional-" />
+
+          <label>Tel. No.: <span class="optional">(optional)</span></label>
+          <input type="text" placeholder="-optional-" />
+
+          <label>Age: <span class="required">*</span></label>
+          <input type="number" placeholder="Age" required />
+
+          <label>Date of Birth: <span class="required">*</span></label>
+          <input type="date" required />
+        </div>
+
+        <!-- Mother Section -->
+        <div class="column">
+          <h3>MOTHER</h3>
+          <label>Name: <span class="required">*</span></label>
+          <input type="text" placeholder="Name" required />
+
+          <label>Home Address: <span class="required">*</span></label>
+          <input type="text" placeholder="Home Address" required />
+
+          <label>Contact No.: <span class="required">*</span></label>
+          <input type="text" placeholder="Contact Number" required />
+
+          <label>Present Occupation: <span class="required">*</span></label>
+          <input type="text" placeholder="Present Occupation" required />
+
+          <label>Office Address: <span class="optional">(optional)</span></label>
+          <input type="text" placeholder="Office Address" />
+
+          <label>Tel. No.: <span class="optional">(optional)</span></label>
+          <input type="text" placeholder="Telephone No." />
+
+          <label>Age: <span class="required">*</span></label>
+          <input type="number" placeholder="Age" required />
+
+          <label>Date of Birth: <span class="required">*</span></label>
+          <input type="date" required />
+        </div>
+
+        <div class="form-navigation full-width">
+          <button class="prev-button" data-prev="2">Back</button>
+          <button class="next-button" data-next="4">Next</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="form-section hidden" id="step-4">
+      <h2>Requirements Upload</h2>
+      <hr class="section-divider" />
+
+      <form class="upload-form" enctype="multipart/form-data">
+        <label>
+          <input type="checkbox" name="requirement1" required />
+          Photocopy of Report Card (Form 138)
+        </label>
+        <input type="file" name="report_card" accept=".pdf,.jpg,.jpeg,.png" required />
+        <br />
+
+        <label>
+          <input type="checkbox" name="requirement2" required />
+          Barangay Clearance (updated)
+        </label>
+        <input type="file" name="barangay_clearance" accept=".pdf,.jpg,.jpeg,.png" required />
+        <br />
+
+        <label>
+          <input type="checkbox" name="requirement3" required />
+          Choose from the type of ID's below <span style="color: #777;">(Immediate Family Only)</span>
+          <small style="color: #777;">Photocopy of Voter's ID Certification, Voter's ID, Pink Card of the Parent/Guardian</small>
+        </label>
+        <input type="file" name="family_id" accept=".pdf,.jpg,.jpeg,.png" required />
+      </form>
+
+      <div class="form-navigation">
+        <button class="prev-button" data-prev="3">Back</button>
+        <button class="next-button" data-next="5">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="form-section hidden" id="step-5">
+      <h2>Set Appointment</h2>
+      <hr class="section-divider" />
+
+      <p><strong>Schedule of Submission of Requirements</strong></p>
+      <hr style="border: 1px solid maroon; margin: 10px 0;" />
+
+      <div class="appointment-form">
+        <label for="appointment-date">Please select a date</label>
+        <select id="appointment-date" name="appointment-date" required>
+          <option value="">Available Dates</option>
+          <!-- Add dynamic date options below -->
+          <option value="2025-06-01">June 1, 2025</option>
+          <option value="2025-06-02">June 2, 2025</option>
+        </select>
+
+        <br /><br />
+
+        <label for="total-slots">Total Slots:</label>
+        <input type="number" id="total-slots" name="total-slots" value="0" readonly />
+
+        <label for="remaining-slots" style="margin-left: 20px;">Remaining Slots:</label>
+        <input type="number" id="remaining-slots" name="remaining-slots" value="0" readonly />
+      </div>
+
+      <div class="form-navigation" style="margin-top: 20px;">
+        <button class="prev-button" data-prev="4">Back</button>
+        <button class="next-button" data-next="6" type="button">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 6 - Finish -->
+    <div class="form-section hidden" id="step-6">
+      <h2>Finish</h2>
+      <hr class="section-divider" />
+      <p><strong>Please review your information before submitting:</strong></p>
+
+      <div class="summary-box">
+        <h3>Personal Information</h3>
+        <p><strong>Full Name:</strong> <span id="summary-fullname"></span></p>
+        <p><strong>Email:</strong> <span id="summary-email"></span></p>
+        <p><strong>Phone:</strong> <span id="summary-phone"></span></p>
+
+        <h3>Residency</h3>
+        <p><strong>Address:</strong> <span id="summary-address"></span></p>
+        <p><strong>City:</strong> <span id="summary-city"></span></p>
+        <p><strong>Province:</strong> <span id="summary-province"></span></p>
+
+        <h3>Family Background</h3>
+        <p><strong>Father's Name:</strong> <span id="summary-father"></span></p>
+        <p><strong>Mother's Name:</strong> <span id="summary-mother"></span></p>
+
+        <h3>File Upload</h3>
+        <p><strong>Uploaded File:</strong> <span id="summary-file"></span></p>
+      
+
+        <h3>Appointment</h3>
+        <p><strong>Appointment Date:</strong> <span id="summary-date"></span></p>
+        <p><strong>Total Slots:</strong> <span id="summary-total-slots"></span></p>
+        <p><strong>Remaining Slots:</strong> <span id="summary-remaining-slots"></span></p>
+      </div>
+
+      <div class="form-navigation" style="margin-top: 20px;">
+        <button class="prev-button" data-prev="5">Back</button>
+        <button type="submit" class="submit-button" id="confirm-submit">Confirm & Submit</button>
+      </div>
+    </div>
+    
+    <!-- Success Screen -->
+    <div class="form-section hidden" id="success-screen">
+      <div class="finish-header">
+        <h2>Finish:</h2>
+        <div class="step-indicator">Step 5 - 5</div>
+      </div>
+      
+      <div class="success-container">
+        <h1 class="success-title">SUCCESS!</h1>
+        
+        <div class="success-checkmark">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path class="checkmark-path" d="M20,55 L40,75 L80,30" fill="none" stroke="#6a1b9a" stroke-width="15" stroke-linecap="round"/>
+          </svg>
+        </div>
+        
+        <p class="success-message">You Have Successfully Signed Up</p>
+        
+        <div class="form-navigation" style="margin-top: 30px;">
+          <button class="submit-button" id="new-application">Start New Application</button>
+        </div>
       </div>
     </div>
   </div>
+  <script src="application.js" defer></script>
 </body>
 </html>

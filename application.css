@@ -1,170 +1,360 @@
+/* Base Reset */
 * {
   box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
   margin: 0;
   padding: 0;
 }
 
-.page-wrapper {
-  display: flex;
-  height: 100vh;
-}
-
-.sidebar {
-  width: 220px;
-  background-color: #600000;
-  color: white;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar h2 {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.sidebar .menu {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.sidebar .menu li {
-  margin: 15px 0;
-}
-
-.sidebar .menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.main-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.navbar {
-  height: 60px;
-  background-color: #7a0a0a;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  font-size: 18px;
 }
 
 .container {
-  flex-grow: 1;
-  overflow-y: auto;
-  padding: 30px 50px;
-  max-width: 1000px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  border-radius: 10px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
+/* View Controls */
+.view-controls {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.control-button {
+  padding: 8px 16px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.control-button.active {
+  background-color: maroon;
+  color: white;
+  border-color: maroon;
+}
+
+.all-button {
+  border-radius: 4px 0 0 4px;
+}
+
+#show-steps-btn {
+  border-radius: 0 4px 4px 0;
+}
+
+/* Stepper */
 .stepper {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
-  padding: 0 10px;
-  position: relative;
+  flex-wrap: wrap;
 }
 
 .step {
   flex: 1;
   text-align: center;
-  position: relative;
   padding: 10px;
-  color: #999;
+  border-bottom: 4px solid #ccc;
+  color: #777;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.step .step-icon {
-  font-size: 20px;
+.step-icon {
+  font-size: 24px;
   margin-bottom: 5px;
 }
 
 .step.active {
-  color: #7a0a0a;
   font-weight: bold;
+  border-bottom-color: maroon;
+  color: maroon;
 }
 
-.step:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 18px;
-  right: -50%;
-  width: 100%;
-  height: 2px;
-  background-color: #ccc;
-  z-index: -1;
+/* Section Dividers */
+.section-divider {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 10px 0 20px 0;
 }
 
-.step.active:not(:last-child)::after {
-  background-color: #7a0a0a;
-}
-
+/* Headings */
 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  color: maroon;
+  font-weight: 600;
 }
 
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* Form Layout */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-input, select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.optional {
-  font-size: 12px;
-  color: gray;
-  font-weight: normal;
+  gap: 20px;
 }
 
 .full-width {
-  grid-column: span 2;
+  grid-column: 1 / -1;
 }
 
 .right-align {
   text-align: right;
 }
 
-.next-button {
-  background-color: #a70d0d;
-  color: white;
-  padding: 10px 25px;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+/* Two column layout (for family background) */
+.two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-.next-button:hover {
-  background-color: #700000;
+.column {
+  flex: 1;
+  min-width: 280px;
 }
+
+/* Form Inputs */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: maroon;
+  outline: none;
+  box-shadow: 0 0 3px rgba(128,0,0,0.2);
+}
+
+label {
+  font-weight: 600;
+  display: block;
+}
+
+.optional {
+  font-weight: normal;
+  color: #888;
+  font-size: 0.9em;
+}
+
+.required {
+  color: red;
+}
+
+/* Button Styles - CONSISTENT ACROSS ALL STEPS */
+.next-button,
+.prev-button,
+.submit-button {
+  padding: 10px 20px;
+  background-color: maroon;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next-button:hover,
+.prev-button:hover,
+.submit-button:hover {
+  background-color: #990000;
+}
+
+/* Navigation Controls */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* Add margin to the right button to push it to the right */
+.form-navigation .next-button,
+.form-navigation .submit-button {
+  margin-left: auto;
+}
+
+/* Hidden Class */
+.hidden {
+  display: none;
+}
+
+/* File Upload Section */
+.upload-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.upload-form input[type="file"] {
+  margin-bottom: 20px;
+  padding: 8px;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* Appointment Section */
+.appointment-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+.appointment-form label {
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.appointment-form select,
+.appointment-form input[type="number"] {
+  width: 200px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+/* Summary Box */
+.summary-box {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.summary-box h3 {
+  color: maroon;
+  margin-top: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.summary-box p {
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.radio-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Form Inline */
+.form-inline {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.form-inline label {
+  font-weight: normal;
+}
+
+/* Success Screen */
+.success-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.success-title {
+  color: maroon;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.success-checkmark {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+}
+
+.checkmark-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 2s ease-in-out forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.success-message {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .stepper {
+    flex-direction: column;
+  }
+  
+  .step {
+    margin-bottom: 5px;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .full-width {
+    grid-column: 1;
+  }
+  
+  .form-navigation {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-navigation button {
+    width: 100%;
+  }
+  
+  .form-navigation .next-button,
+  .form-navigation .submit-button {
+    margin-left: 0;
+  }
+} 
