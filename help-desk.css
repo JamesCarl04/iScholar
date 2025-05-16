@@ -37,7 +37,7 @@
 }
 
 body {
-  background-color: #ffffff; /* Deep red background */
+  background-color: #ffffff; 
   display: flex;
   justify-content: center;
   align-items: flex-start;

@@ -72,9 +72,9 @@ body {
   max-width: 100%;
   border-radius: 10px;
 }
-/* Modal background */
+
 .modal {
-  display: none; /* Hidden by default */
+  display: none; 
   position: fixed;
   z-index: 2000;
   left: 0;
@@ -85,7 +85,7 @@ body {
   background-color: rgba(0,0,0,0.7);
 }
 
-/* Modal box */
+
 .modal-content {
   background-color: #fff;
   margin: 10% auto;
@@ -97,7 +97,6 @@ body {
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
-/* Close button */
 .modal-content .close {
   position: absolute;
   top: 10px;
@@ -111,7 +110,6 @@ body {
   color: #000;
 }
 
-/* Form elements */
 .modal-content form {
   display: flex;
   flex-direction: column;

@@ -23,7 +23,6 @@ body {
   display: flex;
 }
 
-/* Sidebar */
 .sidebar {
   background-color: #222;
   color: white;
@@ -71,7 +70,6 @@ body {
   background-color: #f4f4f4;
 }
 
-/* Scholarships List */
 .scholarship-list {
   list-style: none;
   padding-left: 0;
@@ -152,7 +150,7 @@ body {
 }
 
 .collapsible-content.show {
-  max-height: 500px; /* large enough to fit content */
+  max-height: 500px; 
   padding: 20px;
 }
 
